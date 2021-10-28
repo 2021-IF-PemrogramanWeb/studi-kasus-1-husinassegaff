@@ -29,11 +29,12 @@ if (isset($_POST["register"])) {
 </head>
 
 <body>
-    <h1>Halaman Registasi</h1>
+
     <div class="container mt-5 mb-5 d-flex justify-content-center">
         <div class="card px-1 py-4 justify-content-center">
             <div class="card-body">
-                <img src="img/google.png" alt="logo-google" width="80" class="img-form" />
+                <h1 class="text-center">Register</h1>
+
                 <form action="" method="post">
                     <div class="row">
                         <div class="col-sm-12">
@@ -64,6 +65,7 @@ if (isset($_POST["register"])) {
                     <div class="text-center mb-2">
                         <button class="btn btn-primary confirm-button px-4 w-100" name="register">Register</button>
                     </div>
+                    <div class="row mb-4 px-3"> <small class="font-weight-bold">Have an account? <a class="text-primary" href="login.php">Login</a></small> </div>
                 </form>
             </div>
         </div>

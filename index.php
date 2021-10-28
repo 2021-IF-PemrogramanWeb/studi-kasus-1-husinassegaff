@@ -30,7 +30,7 @@ if (isset($_POST["cari"])) {
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="index.php">Admin Page</a>
         </div>
@@ -46,14 +46,13 @@ if (isset($_POST["cari"])) {
     </nav>
     <div class="container pt-4">
 
-
         <form action="" method="POST">
-            <div class="form-row">
-                <div class="col">
-                    <input type="text" class="form-control" name="keyword" size="50" autofocus placeholder="Masukkan data mahasiswa" autocomplete="off">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <input type="text" class="form-control" name="keyword" autofocus placeholder="Cari data mahasiswa" autocomplete="off">
                 </div>
             </div>
-            <div class="col">
+            <div class="col-auto">
                 <button type="submit" class="btn btn-secondary mb-2" name="cari">Cari</button>
             </div>
         </form>
@@ -65,7 +64,7 @@ if (isset($_POST["cari"])) {
 
 
 
-        <div class="table-responsive">
+        <div class="table-responsive text-center">
             <table class="table table-hover">
                 <thead>
                     <tr>

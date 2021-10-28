@@ -72,14 +72,13 @@ if (isset($_POST["login"])) {
     <div class="container mt-5 mb-5 d-flex justify-content-center">
         <div class="card px-1 py-4 justify-content-center">
             <div class="card-body">
+                <h1 class="text-center">Login</h1>
 
                 <?php if (isset($error)) : ?>
                     <div class="alert alert-danger" role="alert">
                         Username atau password salah
                     </div>
                 <?php endif; ?>
-                <img src="img/google.png" alt="logo-google" width="80" class="img-form" />
-
                 <form action="" method="post">
                     <div class="row">
                         <div class="col-sm-12">
@@ -107,7 +106,7 @@ if (isset($_POST["login"])) {
                     <div class="text-center mb-2">
                         <button type="submit" class="btn btn-primary confirm-button px-4 w-100" name="login">Login</button>
                     </div>
-                    <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <a class="text-danger" href="registrasi.php">Register</a></small> </div>
+                    <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <a class="text-primary" href="registrasi.php">Register</a></small> </div>
                 </form>
             </div>
         </div>

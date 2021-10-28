@@ -45,50 +45,63 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
-    <h1>Tambah data mahasiswa</h1>
-    <div class="container mt-5 mb-5 d-flex justify-content-center">
-        <div class="card px-1 py-4 justify-content-center">
-            <div class="card-body">
-                <form action="" method="post">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group mb-4">
-                                <label for="nama">Nama Lengkap</label>
-                                <input class="form-control" type="text" name="nama" id="nama" required>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group mb-4">
-                                <label for="nrp">NRP</label>
-                                <input class="form-control" type="text" name="nrp" id="nrp" required>
-                            </div>
-                        </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.php">Admin Page</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.php">
+                        <button type="button" class="btn btn-light">Logout</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-5 mb-5 justify-content-center">
+        <h2 class="text-center">Tambah Data Mahasiswa</h2>
+        <form action="" method="post">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group mb-4">
+                        <label for="nama">Nama Lengkap</label>
+                        <input class="form-control" type="text" name="nama" id="nama" required>
                     </div>
+                </div>
+            </div>
 
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group mb-4">
-                                <label for="email">Email</label>
-                                <input class="form-control" type="email" name="email" id="email" required>
-                            </div>
-                        </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group mb-4">
+                        <label for="nrp">NRP</label>
+                        <input class="form-control" type="text" name="nrp" id="nrp" required>
                     </div>
+                </div>
+            </div>
 
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group mb-4">
-                                <label for="ipk">IPK</label>
-                                <input class="form-control" type="number" name="ipk" id="ipk" step="0.01" required>
-                            </div>
-                        </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group mb-4">
+                        <label for="email">Email</label>
+                        <input class="form-control" type="email" name="email" id="email" required>
                     </div>
-                    <div class="text-center mb-2">
-                        <button class="btn btn-primary confirm-button px-4 w-100" name="submit" type="submit">Tambah</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group mb-4">
+                        <label for="ipk">IPK</label>
+                        <input class="form-control" type="number" name="ipk" id="ipk" step="0.01" required>
                     </div>
-                </form>
+                </div>
+            </div>
+            <div class="text-center mb-2">
+                <button class="btn btn-primary confirm-button px-4 w-100" name="submit" type="submit">Tambah</button>
+            </div>
+        </form>
 </body>
 
 </html>
