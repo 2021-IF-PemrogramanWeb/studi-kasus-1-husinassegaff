@@ -57,7 +57,7 @@ if (isset($_POST["register"])) {
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group mb-4">
-                                <label for="password2">Konfirmasi Password</label>
+                                <label for="password2">Confirm Password</label>
                                 <input class="form-control" type="password" name="password2" id="password2">
                             </div>
                         </div>
@@ -65,7 +65,7 @@ if (isset($_POST["register"])) {
                     <div class="text-center mb-2">
                         <button class="btn btn-primary confirm-button px-4 w-100" name="register">Register</button>
                     </div>
-                    <div class="row mb-4 px-3"> <small class="font-weight-bold">Have an account? <a class="text-primary" href="login.php">Login</a></small> </div>
+                    <div class="row mb-4 px-2"> <small class="font-weight-bold">Already have an account? <a class="text-primary" href="login.php">Login</a></small> </div>
                 </form>
             </div>
         </div>

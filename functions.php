@@ -25,9 +25,10 @@ function tambah($data)
     $nrp = htmlspecialchars($data["nrp"]);
     $email = htmlspecialchars($data["email"]);
     $ipk = htmlspecialchars($data["ipk"]);
+    $semester = htmlspecialchars($data["semester"]);
 
     $query = "INSERT INTO mahasiswa VALUES
-    ('','$nrp','$nama','$email','$ipk')";
+    ('','$nrp','$nama','$email','$ipk', '$semester')";
 
     mysqli_query($conn, $query);
 
@@ -53,12 +54,14 @@ function ubah($data)
     $nrp = htmlspecialchars($data["nrp"]);
     $email = htmlspecialchars($data["email"]);
     $ipk = htmlspecialchars($data["ipk"]);
+    $semester = htmlspecialchars($data["semester"]);
 
     $query = "UPDATE mahasiswa SET
                 nama = '$nama',
                 nrp = '$nrp',
                 email = '$email',
-                ipk = '$ipk'
+                ipk = '$ipk',
+                semester = $semester
             WHERE id = $id
             
             ";
@@ -74,7 +77,8 @@ function cari($keyword)
     $query = "SELECT * FROM mahasiswa WHERE
                 nama LIKE '%$keyword%' OR
                 nrp LIKE '%$keyword%' OR
-                email LIKE '%$keyword%'
+                email LIKE '%$keyword%' OR
+                semester LIKE '%$keyword%'
 
             ";
 

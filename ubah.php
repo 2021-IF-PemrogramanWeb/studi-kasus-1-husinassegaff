@@ -52,9 +52,12 @@ if (isset($_POST["submit"])) {
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.php">Admin Page</a>
-        </div>
-        <div class="navbar-collapse collapse">
+            <a class="navbar-brand" href="index.php">
+                <div class="h4">
+                    Admin Page
+                </div>
+            </a>
+
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php">
@@ -96,6 +99,16 @@ if (isset($_POST["submit"])) {
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group mb-4">
+                        <label for="semester">Semester</label>
+                        <input class="form-control" type="number" name="semester" id="semester" required value="<?= $mhs["semester"]; ?>">
+                    </div>
+                </div>
+            </div>
+
 
             <div class="row">
                 <div class="col-sm-12">

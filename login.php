@@ -62,9 +62,8 @@ if (isset($_POST["login"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Login Page</title>
 </head>
 
@@ -106,7 +105,7 @@ if (isset($_POST["login"])) {
                     <div class="text-center mb-2">
                         <button type="submit" class="btn btn-primary confirm-button px-4 w-100" name="login">Login</button>
                     </div>
-                    <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <a class="text-primary" href="registrasi.php">Register</a></small> </div>
+                    <div class="row mb-4 px-2"> <small class="font-weight-bold">Don't have an account? <a class="text-primary" href="registrasi.php">Register</a></small> </div>
                 </form>
             </div>
         </div>
