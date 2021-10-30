@@ -19,7 +19,7 @@ if (isset($_POST["submit"])) {
     if (ubah($_POST) > 0) {
         echo "
             <script>
-                alert('data berhasil diubah');
+                alert('Data berhasil diubah');
 
                 document.location.href = 'index.php';
 
@@ -28,7 +28,7 @@ if (isset($_POST["submit"])) {
     } else {
         echo "
         <script>
-            alert('data gagal diubah');
+            alert('Data gagal diubah');
         </script>
     ";
     }
@@ -104,7 +104,13 @@ if (isset($_POST["submit"])) {
                 <div class="col-sm-12">
                     <div class="form-group mb-4">
                         <label for="semester">Semester</label>
-                        <input class="form-control" type="number" name="semester" id="semester" required value="<?= $mhs["semester"]; ?>">
+                        <select class="form-select" aria-label="Default select example" name="semester" required>
+                            <!-- <option selected>Semester...</option> -->
+                            <option value="3">3</option>
+                            <option value="5">5</option>
+                            <option value="7">7</option>
+                        </select>
+                        <!-- <input class="form-control" type="number" name="semester" id="semester" required> -->
                     </div>
                 </div>
             </div>
@@ -119,8 +125,13 @@ if (isset($_POST["submit"])) {
                 </div>
             </div>
             <div class="text-center mb-2">
-                <button class="btn btn-warning confirm-button px-4 w-100" name="submit" type="submit"><strong>Ubah</strong></button>
+                <button class="btn btn-warning confirm-button px-4 w-100" name="submit" type="submit">Ubah</button>
             </div>
+            <!-- <div class="text-center mb-2">
+                <a href="index.php">
+                    <button class="btn btn-dark w-100">Kembali</button>
+                </a>
+            </div> -->
         </form>
 </body>
 

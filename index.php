@@ -22,6 +22,16 @@ if (isset($_POST["cari"])) {
     $mahasiswa = cari($_POST["keyword"]);
 }
 
+
+$ipkaverage_3 = ipkaverage("SELECT ROUND(AVG(ipk),2) FROM mahasiswa WHERE semester = '3'");
+$countmhs_3 = countmahasiswa("SELECT * FROM mahasiswa WHERE semester = '3'");
+$ipkaverage_5 = ipkaverage("SELECT ROUND(AVG(ipk),2) FROM mahasiswa WHERE semester = '5'");
+$countmhs_5 = countmahasiswa("SELECT * FROM mahasiswa WHERE semester = '5'");
+$ipkaverage_7 = ipkaverage("SELECT ROUND(AVG(ipk),2) FROM mahasiswa WHERE semester = '7'");
+$countmhs_7 = countmahasiswa("SELECT * FROM mahasiswa WHERE semester = '7'");
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -63,12 +73,16 @@ if (isset($_POST["cari"])) {
                     <button type="button" class="btn btn-dark">Add Data</button>
                 </a>
             </div>
-            <div class="col-8">
+            <div class="col-5">
                 <form class="form-inline" action="" method="POST">
-
-                    <input type="text" class="form-control mb-2 mr-sm-2" name="keyword" placeholder="Cari data mahasiswa" autocomplete="off">
-                    <button type="submit" class="btn btn-dark mb-2" name="cari">Cari</button>
-
+                    <div class="row">
+                        <div class="col-9">
+                            <input type="text" class="form-control mb-2" name="keyword" placeholder="Cari data mahasiswa" autocomplete="off">
+                        </div>
+                        <div class="col-3">
+                            <button type="submit" class="btn btn-dark mb-2" name="cari">Cari</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -76,7 +90,7 @@ if (isset($_POST["cari"])) {
 
 
         <div class="table-responsive text-center">
-            <table class="table table-hover">
+            <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th scope="col">No</th>
@@ -109,7 +123,7 @@ if (isset($_POST["cari"])) {
                                 </a>
                             </td>
                             <td>
-                                <a href="hapus.php?id=<?= $mhs["id"]; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data mahasiswa ini?');">
+                                <a href="hapus.php?id=<?= $mhs["id"]; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data <?= $mhs['nama']; ?>?');">
                                     <button type="button" class="btn btn-outline-danger px-0 py-1">
                                         <img src="icons/delete.png" class="img-fluid" alt="delete-icon" width="60%">
                                     </button>
@@ -175,24 +189,54 @@ if (isset($_POST["cari"])) {
 
 
         <!-- chartjs -->
-
-        <p>
-            <button class="btn btn-success w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                Open Chart
-            </button>
-        </p>
+        <div class="pt-3">
+            <p>
+                <button class="btn btn-success w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" name="buttonchart">
+                    Open Chart
+                </button>
+            </p>
+        </div>
         <div class="collapse" id="collapseExample">
             <div class="card card-body">
+                <div class="table-responsive text-center my-3">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Semester</th>
+                                <th scope="col">Jumlah Mahasiswa</th>
+                                <th scope="col">IPK Rata-Rata</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>3</th>
+                                <td><?= $countmhs_3; ?></td>
+                                <td><?= $ipkaverage_3[0]; ?></td>
+                            </tr>
+                            <tr>
+                                <th>5</th>
+                                <td><?= $countmhs_5; ?></td>
+                                <td><?= $ipkaverage_5[0]; ?></td>
+                            </tr>
+                            <tr>
+                                <th>7</th>
+                                <td><?= $countmhs_7; ?></td>
+                                <td><?= $ipkaverage_7[0]; ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <canvas id="bar-chart" width="800" height="450"></canvas>
                 <script>
                     new Chart(document.getElementById("bar-chart"), {
                         type: 'bar',
                         data: {
-                            labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+                            labels: ["Semester 3", "Semester 5", "Semester 7"],
                             datasets: [{
-                                label: "Population (millions)",
-                                backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                                data: [2478, 5267, 734, 784, 433]
+                                label: "IPK Rata-Rata",
+                                backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f"],
+                                data: [<?= $ipkaverage_3[0]; ?>, <?= $ipkaverage_5[0]; ?>, <?= $ipkaverage_7[0]; ?>]
+
                             }]
                         },
                         options: {
@@ -201,7 +245,7 @@ if (isset($_POST["cari"])) {
                             },
                             title: {
                                 display: true,
-                                text: 'Predicted world population (millions) in 2050'
+                                text: 'Nilai IPK Rata-Rata Mahasiswa'
                             }
                         }
                     });

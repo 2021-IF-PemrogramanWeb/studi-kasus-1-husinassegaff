@@ -40,7 +40,7 @@ if (isset($_POST["register"])) {
                         <div class="col-sm-12">
                             <div class="form-group mb-4">
                                 <label for="username">Username</label>
-                                <input class="form-control" type="text" name="username" id="username">
+                                <input class="form-control" type="text" name="username" id="username" required>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ if (isset($_POST["register"])) {
                         <div class="col-sm-12">
                             <div class="form-group mb-4">
                                 <label for="password">Password</label>
-                                <input class="form-control" type="password" name="password" id="password">
+                                <input class="form-control" type="password" name="password" id="password" required>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@ if (isset($_POST["register"])) {
                         <div class="col-sm-12">
                             <div class="form-group mb-4">
                                 <label for="password2">Confirm Password</label>
-                                <input class="form-control" type="password" name="password2" id="password2">
+                                <input class="form-control" type="password" name="password2" id="password2" required>
                             </div>
                         </div>
                     </div>

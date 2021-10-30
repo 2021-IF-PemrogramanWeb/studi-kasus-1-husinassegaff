@@ -118,3 +118,20 @@ function registrasi($data)
 
     return mysqli_affected_rows($conn);
 }
+
+function countmahasiswa($querycount)
+{
+    global $conn;
+
+    $result = mysqli_query($conn, $querycount);
+
+    return mysqli_num_rows($result);
+}
+
+function ipkaverage($querychart)
+{
+    global $conn;
+    $result = mysqli_query($conn, $querychart);
+
+    return mysqli_fetch_array($result);
+}

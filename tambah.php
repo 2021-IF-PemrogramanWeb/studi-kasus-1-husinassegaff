@@ -14,7 +14,7 @@ if (isset($_POST["submit"])) {
     if (tambah($_POST) > 0) {
         echo "
             <script>
-                alert('data berhasil ditambahkan');
+                alert('Data berhasil ditambahkan');
 
                 document.location.href = 'index.php';
 
@@ -23,7 +23,7 @@ if (isset($_POST["submit"])) {
     } else {
         echo "
         <script>
-            alert('data gagal ditambahkan');
+            alert('Data gagal ditambahkan');
         </script>
     ";
     }
@@ -78,7 +78,7 @@ if (isset($_POST["submit"])) {
                 <div class="col-sm-12">
                     <div class="form-group mb-4">
                         <label for="nrp">NRP</label>
-                        <input class="form-control" type="text" name="nrp" id="nrp" required>
+                        <input class="form-control" type="text" name="nrp" id="nrp" required placeholder="051119400000001">
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@ if (isset($_POST["submit"])) {
                 <div class="col-sm-12">
                     <div class="form-group mb-4">
                         <label for="email">Email</label>
-                        <input class="form-control" type="email" name="email" id="email" required>
+                        <input class="form-control" type="email" name="email" id="email" required placeholder="mahasiswa@gmail.com">
                     </div>
                 </div>
             </div>
@@ -96,7 +96,13 @@ if (isset($_POST["submit"])) {
                 <div class="col-sm-12">
                     <div class="form-group mb-4">
                         <label for="semester">Semester</label>
-                        <input class="form-control" type="number" name="semester" id="semester" required>
+                        <select class="form-select" aria-label="Default select example" name="semester" required>
+                            <!-- <option selected>Semester...</option> -->
+                            <option value="3">3</option>
+                            <option value="5">5</option>
+                            <option value="7">7</option>
+                        </select>
+                        <!-- <input class="form-control" type="number" name="semester" id="semester" required> -->
                     </div>
                 </div>
             </div>
@@ -105,13 +111,18 @@ if (isset($_POST["submit"])) {
                 <div class="col-sm-12">
                     <div class="form-group mb-4">
                         <label for="ipk">IPK</label>
-                        <input class="form-control" type="number" name="ipk" id="ipk" step="0.01" required>
+                        <input class="form-control" type="number" name="ipk" id="ipk" step="0.01" required placeholder="4.00">
                     </div>
                 </div>
             </div>
             <div class="text-center mb-2">
-                <button class="btn btn-primary confirm-button px-4 w-100" name="submit" type="submit">Tambah</button>
+                <button class="btn btn-success confirm-button px-4 w-100" name="submit" type="submit">Tambah</button>
             </div>
+            <!-- <div class="text-center mb-2">
+                <a href="index.php">
+                    <button class="btn btn-dark w-100">Kembali</button>
+                </a>
+            </div> -->
         </form>
 </body>
 
