@@ -68,20 +68,16 @@ $countmhs_7 = countmahasiswa("SELECT * FROM mahasiswa WHERE semester = '7'");
     </nav>
     <div class="container mt-5">
         <div class="row justify-content-between">
-            <div class="col-4">
+            <div class="col-5">
                 <a href="tambah.php">
                     <button type="button" class="btn btn-dark">Add Data</button>
                 </a>
             </div>
-            <div class="col-5">
+            <div class="col-lg-4 col-7">
                 <form class="form-inline" action="" method="POST">
-                    <div class="row">
-                        <div class="col-9">
-                            <input type="text" class="form-control mb-2" name="keyword" placeholder="Cari data mahasiswa" autocomplete="off">
-                        </div>
-                        <div class="col-3">
-                            <button type="submit" class="btn btn-dark mb-2" name="cari">Cari</button>
-                        </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control mb-2" name="keyword" placeholder="Cari data mahasiswa" autocomplete="off">
+                        <button type="submit" class="btn btn-dark mb-2" name="cari">Cari</button>
                     </div>
                 </form>
             </div>
@@ -153,7 +149,7 @@ $countmhs_7 = countmahasiswa("SELECT * FROM mahasiswa WHERE semester = '7'");
                         </li>
                     <?php endif; ?>
 
-                    <?php for ($i = 1; $i <= $page; $i++) : ?>
+                    <?php for ($i = $activepage; $i <= $activepage + 2; $i++) : ?>
                         <?php if ($i == $activepage) : ?>
                             <li class="page-item active">
                                 <a class="page-link" href="?page=<?= $i; ?>">
