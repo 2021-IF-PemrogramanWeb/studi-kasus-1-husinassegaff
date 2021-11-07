@@ -60,7 +60,7 @@ $countmhs_7 = countmahasiswa("SELECT * FROM mahasiswa WHERE semester = '7'");
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php">
-                        <button type="button" class="btn btn-light">Logout</button>
+                        <button type="button" class="btn btn-danger">Logout</button>
                     </a>
                 </li>
             </ul>
@@ -162,6 +162,16 @@ $countmhs_7 = countmahasiswa("SELECT * FROM mahasiswa WHERE semester = '7'");
                                     <?= $i; ?>
                                 </a>
                             </li>
+                        <?php endif; ?>
+                        <?php if ($i + 1 == $page) : ?>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=<?= $i + 1; ?>">
+                                    <?= $i + 1; ?>
+                                </a>
+                            </li>
+                            <?php break; ?>
+                        <?php elseif ($i == $page) : ?>
+                            <?php break; ?>
                         <?php endif; ?>
                     <?php endfor; ?>
 

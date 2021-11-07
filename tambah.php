@@ -56,7 +56,7 @@ if (isset($_POST["submit"])) {
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php">
-                        <button type="button" class="btn btn-light">Logout</button>
+                        <button type="button" class="btn btn-danger">Logout</button>
                     </a>
                 </li>
             </ul>
